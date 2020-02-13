@@ -26,8 +26,7 @@ def main():
 
     elif page == "Exploration":
         st.title("Data Exploration")
-        visualize_data(x,y)
-
+        visualize_data(x, y)
 
 
 def running_mean(l, N):
@@ -46,13 +45,10 @@ def running_mean(l, N):
 
 
 def visualize_data(df, x_axis, y_axis):
-p = figure(plot_width=400, plot_height=400)
-
-# add a circle renderer with a size, color, and alpha
-p.circle(x, y, size=20, color="navy", alpha=0.5)
-
-# show the results
-
+    p = figure(plot_width=400, plot_height=400)
+    # add a circle renderer with a size, color, and alpha
+    p.circle(x, y, size=20, color="navy", alpha=0.5)
+    # show the results
     st.write(p)
 
 
