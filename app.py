@@ -1,6 +1,8 @@
 import streamlit as st
 import numpy as np
-from bokeh.plotting import figure, output_file, show
+
+# from bokeh.plotting import figure, output_file, show
+import plotly.graph_objects as go
 
 
 def main():
@@ -21,12 +23,12 @@ def main():
     page = st.sidebar.selectbox("Choose a page", ["Homepage", "Exploration"])
 
     if page == "Homepage":
-        st.header("This is your data explorer.")
+        st.header("Would you marry me?")
         st.write("Please select a page on the left.")
 
     elif page == "Exploration":
         st.title("Data Exploration")
-        visualize_data(x, y)
+        visualize_data(x, y, z, color)
 
 
 def running_mean(l, N):
@@ -44,12 +46,34 @@ def running_mean(l, N):
     return result
 
 
-def visualize_data(x, y):
-    p = figure(plot_width=400, plot_height=400)
-    # add a circle renderer with a size, color, and alpha
-    p.circle(x, y, size=20, color="navy", alpha=0.5)
-    # show the results
-    st.write(p)
+def visualize_data(x, y, z, c):
+    # p = figure(plot_width=400, plot_height=400)
+    # # add a circle renderer with a size, color, and alpha
+    # p.circle(x, y, size=20, color="navy", alpha=0.5)
+    # # show the results
+    # st.write(p)
+    fig = go.Figure(
+        data=[
+            go.Scatter3d(
+                x=x,
+                y=y,
+                z=z,
+                mode="lines+markers",
+                marker=dict(
+                    size=4,
+                    color=color,  # set color to an array/list of desired values
+                    colorscale="Picnic",  # choose a colorscale
+                    opacity=0.8,
+                ),
+            )
+        ],
+        layout=go.Layout(
+            title="Femoral Head Rotation during Activity",
+            xaxis=dict(title="Flexion/Extension Angle"),
+            yaxis=dict(title="Adduction/Abduction Angle"),
+        ),
+    )
+    st.write(fig)
 
 
 if __name__ == "__main__":
