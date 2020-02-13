@@ -23,8 +23,10 @@ def main():
     page = st.sidebar.selectbox("Choose a page", ["Homepage", "Exploration"])
 
     if page == "Homepage":
-        st.header("Would you marry me?")
-        st.write("Please select a page on the left.")
+        st.header("Finite Element Analysis of FAI")
+        st.write(
+            "Enter at your own peril. The material ahead will be interesting, confusing, and really cool. I hope you enjoy it as much as I did."
+        )
 
     elif page == "Exploration":
         st.title("Data Exploration")
