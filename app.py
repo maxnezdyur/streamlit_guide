@@ -6,6 +6,8 @@ import plotly.graph_objects as go
 
 
 def main():
+    data = np.genfromtxt('data.txt', delimiter=',')
+
     x1 = np.array([0] * 6)
     x2 = np.linspace(0, 45, 9)
     x = np.concatenate((x1, x2))
@@ -27,6 +29,7 @@ def main():
         st.write(
             "Enter at your own peril. The material ahead will be interesting, confusing, and really cool. I hope you enjoy it as much as I did."
         )
+        st.write(data)
 
     elif page == "Exploration":
         st.title("Data Exploration")
