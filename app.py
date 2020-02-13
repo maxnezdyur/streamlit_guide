@@ -71,6 +71,8 @@ def visualize_data(x, y, z, c):
             title="Femoral Head Rotation during Activity",
             xaxis=dict(title="Flexion/Extension Angle"),
             yaxis=dict(title="Adduction/Abduction Angle"),
+            width=2500,
+            height=1500,
         ),
     )
     st.write(fig)
