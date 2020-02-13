@@ -61,7 +61,7 @@ def visualize_data(x, y, z, c):
                 mode="lines+markers",
                 marker=dict(
                     size=4,
-                    color=color,  # set color to an array/list of desired values
+                    color=c,  # set color to an array/list of desired values
                     colorscale="Picnic",  # choose a colorscale
                     opacity=0.8,
                 ),
