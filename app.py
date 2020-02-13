@@ -44,7 +44,7 @@ def running_mean(l, N):
     return result
 
 
-def visualize_data(df, x_axis, y_axis):
+def visualize_data(x, y):
     p = figure(plot_width=400, plot_height=400)
     # add a circle renderer with a size, color, and alpha
     p.circle(x, y, size=20, color="navy", alpha=0.5)
