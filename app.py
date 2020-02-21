@@ -9,12 +9,12 @@ import matplotlib.colors as colors
 
 @st.cache
 def pelv_upload():
-    pelv = mesh.Mesh.from_file("pelv_origin.stl")
+    pelv = mesh.Mesh.from_file("pelv_origin_2.stl")
     return pelv
 
 
 def fem_upload():
-    fem = mesh.Mesh.from_file("fem_origin.stl")
+    fem = mesh.Mesh.from_file("fem_origin_2.stl")
     return fem
 
 
