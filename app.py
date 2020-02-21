@@ -31,9 +31,11 @@ def main():
 
     elif page == "Exploration":
         st.title("Data Exploration")
-        angle = st.slider("y-angle", -30, 15, 0)
+        angle = st.slider("Rotate Femur", -30, 15, 0)
+        view1 = st.slider("Rotate Graph", -30, 30, 0)
+        view2 = st.slider("Rotate Graph", 45, 135, 90)
         fem_data.rotate([0.0, 0.5, 0.0], math.radians(angle))
-        visualize_data(fem_data, pelv_data)
+        visualize_data(fem_data, pelv_data, view1, view2)
 
 
 def rotate_fem(angle, fem):
@@ -41,11 +43,11 @@ def rotate_fem(angle, fem):
     return new_fem
 
 
-def visualize_data(fem, pelv):
+def visualize_data(fem, pelv, view1, view2):
     figure = pyplot.figure()
     axes = mplot3d.Axes3D(figure)
     axes.auto_scale_xyz([-100, 100], [-100, 100], [-100, 100])
-    axes.view_init(0, 90)
+    axes.view_init(view1, view2)
     fem_plot = mplot3d.art3d.Poly3DCollection(fem.vectors)
     fem_plot.set_color(colors.rgb2hex([0.9, 0.6, 0.0]))
     axes.add_collection3d(fem_plot)
