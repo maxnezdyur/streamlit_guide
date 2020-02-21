@@ -33,7 +33,6 @@ def main():
         st.title("Data Exploration")
         angle = st.slider("y-angle", -30, 15, 0)
         fem_data.rotate([0.0, 0.5, 0.0], math.radians(angle))
-        # new_fem_data = rotate_fem(angle, fem_data)
         visualize_data(fem_data, pelv_data)
 
 
