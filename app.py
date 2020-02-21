@@ -32,8 +32,8 @@ def main():
     elif page == "Exploration":
         st.title("Data Exploration")
         angle = st.slider("Rotate Femur", -30, 15, 0)
-        view1 = st.slider("Rotate Graph", -30, 30, 0)
-        view2 = st.slider("Rotate Graph", 45, 135, 90)
+        view1 = st.slider("Rotate Graph (Up, Down)", -30, 30, 0)
+        view2 = st.slider("Rotate Graph (Left, Right)", 45, 135, 90)
         fem_data.rotate([0.0, 0.5, 0.0], math.radians(angle))
         visualize_data(fem_data, pelv_data, view1, view2)
 
